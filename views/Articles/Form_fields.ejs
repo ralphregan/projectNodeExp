@@ -1,0 +1,26 @@
+<div class="form-group">
+    <label for="title">Title</label>
+    <input type="text" value="<%= article.title%>" name="title" id="title" class="form-control">
+</div>
+<div class="form-group">
+    <label for="description">Description</label>
+    <textarea name="description" id="description" class="form-control" required><%= article.description %> </textarea>
+
+
+</div>
+<div class="form-group">
+    <label for="arthur">Created by</label>
+    <input type="text" value="<%= article.arthur%>" name="arthur" id="arthur" class="form-control">
+
+</div>
+<div class="form-group">
+    <label for="path">Story</label>
+    <textarea required name="path" id="path" class="form-control"><%= article.path %> </textarea>
+</div>
+
+<div class="form-group">
+    <label for="image">Upload Image</label>
+<input type="file" id="image" name="image" accept="image/*">
+</div>
+<a href="/profile.ejs" onclick="window.history.back(); return false;" class="btn btn-secondary">Cancel</a>
+<button type="submit" class="btn btn-primary"> Save</button>

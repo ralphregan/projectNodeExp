@@ -1,0 +1,28 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<main role="main" class="inner cover mt-5  mb-5">
+    <h1 class="cover-heading ">Explore.</h1>
+    <p class="lead font-weight-bold">YourJourney is a platform designed to empower you on your path to learning new
+        skills, whether it’s coding, cooking, photography, or anything in between. This is your space to document every
+        milestone, reflect on your progress, and share your journey with the world.</p>
+
+    <p class="lead"> On YourJourney, you’ll be able to create a personal learning blog, capturing the details of your
+        unique experience. As you log your insights, challenges, and victories, you’re building a valuable portfolio
+        that highlights your growth. Whether you’re sharing with family and friends or</p>
+    <p class="lead"> showcasing your journey to recruiters, YourJourney helps you put your best foot forward.</p>
+    <p class="lead"> Start today—set your goals, track your progress, and bring others along as you move forward. Let’s
+        make every step of your learning journey count!</p>
+    <form action="/start" method="post">
+        <button type="submit" class="btn btn-primary btn-lg mt-2" id="start-btn">START</button>
+    </form>
+</main>
+
+<script>
+    $("#start-btn").on("click", () => {
+
+        setTimeout(() => {
+            $("#start-btn").removeClass("btn btn-primary btn-lg mt-3")
+            $("#start-btn").addClass("btn btn-success btn-lg mt-4")
+        }, 0);
+
+    })
+</script>
