@@ -19,7 +19,7 @@ import { log } from "console"
 
 const dbURL = process.env.DATABASE_URL
 if(!dbURL){
-   throw new("its the dburl")
+   throw new Error("its the dburl")
     
 }
 const client = new MongoClient(uri, {
