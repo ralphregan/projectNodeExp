@@ -1,4 +1,5 @@
 import express from "express"
+import dotenv from "dotenv"
 import bodyParser from "body-parser"
 import { randomSuperhero } from "superheroes"
 import random from "random-name"
@@ -10,7 +11,10 @@ import mongoose from "mongoose"
 import router from "./routes/post.js"
 import router2 from "./routes/public_post.js"
 import Article from "./models/articles.js"
-const dbURI = "mongodb+srv://reganralph07:JaBgZVNI6ulf5yYi@cluster0.hyhv4.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+dotenv.config()
+
+const dbURI = process.env.DATABASE_URL
 
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => {
@@ -30,7 +34,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use(express.static("public"))
 
-app.use("/uploads" , express.static("uploads"))
+app.use("/uploads", express.static("uploads"))
 app.use("/profile", router)
 app.use(router2)
 

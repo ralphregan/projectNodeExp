@@ -1,6 +1,8 @@
 import express, { Router } from "express"
+import path from "path"
 import Article from "../models/articles.js"
-import upload from "../models/upload.js"
+import upload from "../models/uploads.js"
+import slugify from "slugify"
 
 
 const router = express.Router()
@@ -31,8 +33,8 @@ router.post("/show", upload.single("image"), async (req, res) => {
         CreatedTime: req.body.CreatedTime,
         path: req.body.path,
         arthur: req.body.arthur,
-        imageUrl: imageUrl
-       
+        imageUrl: `/uploads/${req.file.filename}`,
+        slug: slugify(req.body.title, { lower: true, strict: true }),
 
     })
     console.log(article.imageUrl)
