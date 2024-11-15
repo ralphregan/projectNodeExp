@@ -1,17 +1,22 @@
+import mongoose from "mongoose"
+import {MongoClient, ServerApiVersion} from "mongodb"
 import dotenv from "dotenv"
 dotenv.config()
 import express from "express"
-import {MongoClient, ServerApiVersion} from "mongodb"
+
 import bodyParser from "body-parser"
 import { randomSuperhero } from "superheroes"
 import random from "random-name"
 import methodOverride from "method-override"
 import { title } from "process"
 var app = express()
+console.log(process.env)
+console.log(process.env.DATABASE_URL);
+
 
 
 var port = process.env.PORT || 3000
-import mongoose from "mongoose"
+
 import router from "./routes/post.js"
 import router2 from "./routes/public_post.js"
 import Article from "./models/articles.js"
