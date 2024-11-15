@@ -101,7 +101,7 @@ app.post("/profile", async (req, res, next) => {
 
 
 
-app.listen(port, (req, res) => {
+app.listen(port, '0.0.0.0', (req, res) => {
     console.log(`i'm listening on the port ${port}`);
 
 })

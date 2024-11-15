@@ -58,3 +58,27 @@ background-size: cover;
     word-spacing: 2px;
     text-align: center;
 }
+/* Base styles for larger screens (e.g., desktop) */
+body {
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Mobile styles */
+  @media only screen and (max-width: 768px) {
+    body {
+      font-size: 14px;  /* smaller font size for mobile */
+      margin: 0;
+      padding: 0;
+    }
+  
+    /* You can adjust any other element here for mobile devices */
+    .container {
+      padding: 10px;
+    }
+  
+    .header {
+      font-size: 18px; /* adjust header size */
+    }
+  }
