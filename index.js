@@ -17,8 +17,8 @@ import Article from "./models/articles.js"
 import { log } from "console"
 
 
-const dbURL = process.env.DATABASE_URL
-if(!dbURL){
+const uri = process.env.DATABASE_URL
+if(!uri){
    console.log(`its the dburl ${process.env.DATABASE_URL}`)
     
 }
@@ -43,7 +43,7 @@ const client = new MongoClient(uri, {
   }
   run().catch(console.dir);
 
-mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 3000})
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 3000})
     .then(() => {
         // Listen for requests
         console.log("i am connected")
