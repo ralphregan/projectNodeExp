@@ -1,6 +1,6 @@
 import dotenv from "dotenv"
 import express from "express"
-
+import {MongoClient, ServerApiVersion} from "mongodb"
 import bodyParser from "body-parser"
 import { randomSuperhero } from "superheroes"
 import random from "random-name"
@@ -22,6 +22,26 @@ if(!dbURL){
    throw new("its the dburl")
     
 }
+const client = new MongoClient(uri, {
+    serverApi: {
+      version: ServerApiVersion.v1,
+      strict: true,
+      deprecationErrors: true,
+    }
+  });
+  async function run() {
+    try {
+      // Connect the client to the server	(optional starting in v4.7)
+      await client.connect();
+      // Send a ping to confirm a successful connection
+      await client.db("admin").command({ ping: 1 });
+      console.log("Pinged your deployment. You successfully connected to MongoDB!");
+    } finally {
+      // Ensures that the client will close when you finish/error
+      await client.close();
+    }
+  }
+  run().catch(console.dir);
 
 mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 3000})
     .then(() => {
