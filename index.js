@@ -1,18 +1,20 @@
-import express from "express"
 import dotenv from "dotenv"
+import express from "express"
+
 import bodyParser from "body-parser"
 import { randomSuperhero } from "superheroes"
 import random from "random-name"
 import methodOverride from "method-override"
 import { title } from "process"
 var app = express()
+dotenv.config()
+
 var port = process.env.PORT || 3000
 import mongoose from "mongoose"
 import router from "./routes/post.js"
 import router2 from "./routes/public_post.js"
 import Article from "./models/articles.js"
 
-dotenv.config()
 
 const dbURI = process.env.DATABASE_URL
 
