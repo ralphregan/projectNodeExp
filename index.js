@@ -16,7 +16,7 @@ dotenv.config()
 
 const dbURI = process.env.DATABASE_URL
 
-mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 3000})
     .then(() => {
         // Listen for requests
         console.log("i am connected")
