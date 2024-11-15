@@ -19,7 +19,7 @@ import { log } from "console"
 
 const dbURL = process.env.DATABASE_URL
 if(!dbURL){
-    console.log("it is the dbURI");
+   throw new("its the dburl")
     
 }
 
