@@ -14,11 +14,16 @@ import mongoose from "mongoose"
 import router from "./routes/post.js"
 import router2 from "./routes/public_post.js"
 import Article from "./models/articles.js"
+import { log } from "console"
 
 
-const dbURI = process.env.DATABASE_URL
+const dbURL = process.env.DATABASE_URL
+if(!dbURL){
+    console.log("it is the dbURI");
+    
+}
 
-mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 3000})
+mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true, serverSelectionTimeoutMS: 3000})
     .then(() => {
         // Listen for requests
         console.log("i am connected")
